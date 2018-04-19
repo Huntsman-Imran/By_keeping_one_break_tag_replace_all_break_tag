@@ -11,17 +11,16 @@ public class JavaApplication19 {
 
     public static void main(String[] args) {
       String strings= "<div>imran imranimranimranimranimran imranimran<br/><br/><br/>imranimran</div>";
-       // Document document = Jsoup.parse(strings);
-    //document.outputSettings(new Document.OutputSettings().prettyPrint(false));//makes html() preserve linebreaks and spacing
-   // document.select("br").append("\\n");
-    //document.select("p").prepend("\\n\\n");
-    //String s = document.html().replaceAll("<br/>", "<br/>");
-
-    String document= Jsoup.parse(strings.replaceAll("(?i)<br[^>]*>", "br2n")).text();
-    String text = document.replaceAll("br2n", "\n");
+ 
     
-    String string= Jsoup.clean(text, "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
-    System.out.println(string);
+    String s="wefjwefhiwf\n\n\njwfvuwfbw\n\nuioefhcweiuf";
+    s=s.trim().replaceAll("\n+","\n");//+ for multiple occurrences 
+    System.out.println(s);
+    String s1="wefjwefhiwf<br/><br/><br/>jwfvuwfbw<br/><br/>uioefhcweiuf";
+    s1=s1.trim().replaceAll("<br/>","\n");//+ for multiple occurrences 
+    System.out.println(s1);
+    String s2=s1.trim().replaceAll("\n+","\n");
+System.out.println(s2);
     }
     
 }
