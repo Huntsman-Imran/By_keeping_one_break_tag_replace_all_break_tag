@@ -22,11 +22,12 @@ public class JavaApplication19 {
 //    String s2=s1.trim().replaceAll("\n+","\n");
 //    System.out.println(s2);
         
-    String s1="wefjwefhiwf<br/><br/><br/><br><br>jwfvuwfbw<br/><br/><br/><br/><br/>uioefhc<br/><br/><br/>weiuf";
-    s1=s1.trim().replaceAll("(?i)<br[^>]*>","\n");//+ for multiple occurrences 
-    System.out.println(s1);
-    String s2=s1.trim().replaceAll("\n+","<br/><br/>");
-    System.out.println(s2);
+      String s1="wefjwefhiwf<br/><br/><br/><br/><br/> <br/><br/> <br /><br ><br>jwfvuwfbw<br/><br/><br/><br/><br/>uioefhc<br/><br/><br/>weiuf";
+	// s1=s1.trim().replaceAll("(?i)<br[^>]*>","\n");//+ for break without space (<br/><br/><br/><br/><br/>)
+	   s1=s1.trim().replaceAll("(?i)<br\\s*/?>+(\\s*)+","\n"); //+ for break with space (<br/><br/><br/><br/><br/> <br /><br ><br>)
+	   System.out.println(s1);
+	   String s2=s1.trim().replaceAll("\n+","<br/><br/>");
+	   System.out.println(s2);
     }
     
 }
